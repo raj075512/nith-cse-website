@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import styles from '../styles/header.module.css'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useRouter();
   return (
-    <div className='Navbar'>
-      <img src="/logo.png" alt="logo" className="logo"/>
-      <div className={`nav-items ${isOpen && "open"}`}>
-        <Link className={`nav-links ${location.pathname === '/' ? 'active' : ''}`} href="/">Home</Link>
-        <Link className={`nav-links ${location.pathname === '/about' ? 'active' : ''}`} href="/about">About</Link>
-        <Link className={`nav-links ${location.pathname === '/service' ? 'active' : ''}`} href="/service">Service</Link>
-        <Link className={`nav-links ${location.pathname === '/contact' ? 'active' : ''}`} href="/contact">Contact</Link>
+    <div className={styles.Navbar}>
+      <img src="/logo.png" alt="logo" className={styles.logo}/>
+      <div className={`${styles.navItems} ${isOpen && styles.open}`}>
+        <Link className={`${styles.navLinks} ${location.pathname === '/' ? styles.active : ''}`} href="/">Home</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/about' ? styles.active : ''}`} href="/about">About</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/service' ? styles.active : ''}`} href="/service">Service</Link>
+        <Link className={`${styles.navLinks} ${location.pathname === '/contact' ? styles.active : ''}`} href="/contact">Contact</Link>
       </div>
-      <div className={`nav-toggle ${isOpen && "open"}`}
+      <div className={`${styles.navToggle} ${isOpen && styles.open}`}
         onClick={() => setIsOpen(!isOpen)}>
-        <div className="bar"></div>
+        <div className={styles.bar}></div>
       </div>
     </div>
   );
