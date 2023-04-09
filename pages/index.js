@@ -18,7 +18,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} />
+      <ScrollToTop smooth='true' width={30} height={30} style={scrollStyle} /> 
+      
       <Header />
       <Footer />
     </>
